@@ -1,0 +1,80 @@
+:root{
+    --accent-color: #556586;
+    --secondary-color: #FFF;
+}
+
+@font-face {
+    font-family: "Tw Cen MT Condensed";
+    src: url(/fonts/TwCenMTCondensed.ttf);
+}
+
+body {
+    font-family: 'Tw Cen MT Condensed', Verdana, sans-serif;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+nav ul {
+    display: inline-block;
+}
+
+nav ul li{
+    display: inline-block;
+}
+
+nav ul li{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+a:hover {
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+header, section{
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    overflow-y: hidden;
+    padding: 10px 10%;
+}
+
+header {
+    background: url("/img/backgrounds/main.webp");
+}
+
+#about {
+    background: url("/img/backgrounds/about-back.webp");
+}
+
+#work {
+    background: url("/img/works/belsco.webp");
+    color: var(--secondary-color);
+}
+
+#skills {
+    background: url("/img/backgrounds/skills-back.webp");
+}
+
+#skill-logos img{
+    width: 50px;
+    margin: 0 5px;
+}
+
+#skill-logos {
+    max-width: 30%;
+    float: right;
+}
+
+#contacts {
+    background: url("/img/backgrounds/contacts-back.webp");
+}
+
+section h2 {
+    margin-top: 0;
+}
