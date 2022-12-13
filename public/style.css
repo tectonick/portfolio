@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: "Tw Cen MT Condensed";
-    src: url(/fonts/TwCenMTCondensed.ttf);
+    src: url(fonts/TwCenMTCondensed.ttf);
 }
 
 body {
@@ -45,20 +45,20 @@ header, section{
 }
 
 header {
-    background: url("/img/backgrounds/main.webp");
+    background: url("img/backgrounds/main.webp");
 }
 
 #about {
-    background: url("/img/backgrounds/about-back.webp");
+    background: url("img/backgrounds/about-back.webp");
 }
 
 #work {
-    background: url("/img/works/belsco.webp");
+    background: url("img/works/belsco.webp");
     color: var(--secondary-color);
 }
 
 #skills {
-    background: url("/img/backgrounds/skills-back.webp");
+    background: url("img/backgrounds/skills-back.webp");
 }
 
 #skill-logos img{
@@ -72,7 +72,7 @@ header {
 }
 
 #contacts {
-    background: url("/img/backgrounds/contacts-back.webp");
+    background: url("img/backgrounds/contacts-back.webp");
 }
 
 section h2 {
