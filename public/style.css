@@ -55,10 +55,14 @@ nav ul li {
     color: var(--secondary-color);
 }
 
+
+h1, h2, h3, p, li, a {
+    transform: scale(1, 1.2);
+}
+
 h1 {
     font-size: 2.8rem;
     margin: 30px 0;
-    transform: scale(1, 1.2);
 }
 
 #promo {
@@ -193,6 +197,7 @@ header {
 
 #skills {
     background: url("img/backgrounds/skills-back.webp");
+    position: relative;
 }
 
 #skill-logos img {
@@ -201,8 +206,48 @@ header {
 }
 
 #skill-logos {
-    max-width: 30%;
-    float: right;
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 10%;
+}
+
+#contacts a, #contacts p {
+    display: block;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+#contacts a.shift-right{
+    padding-left: 83px;
+}
+
+#footer-text {
+    padding: 30% 0 2% 0;
+}
+
+#contacts-links .right-block {
+    position: relative;
+    top: 0;
+    right: 0;
+}
+
+@media (min-width:900px) {
+    #contacts-links .right-block {
+        position: absolute;
+        top: 0;
+        right: 30%;
+    }
+}
+
+#contacts-links {
+    position: relative;
+}
+
+@media (min-width:600px) {
+    #skill-logos {
+        display: block;
+    }
 }
 
 #contacts {
@@ -210,8 +255,30 @@ header {
 }
 
 section h2 {
-    margin-top: 0;
+    font-size: 3rem;
+    margin: 10px 0 0 0;
 }
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+a {
+    font-size: 1.5rem;
+    transform: scale(1, 1.2);
+}
+
+section li {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
 
 #menu.is-hidden {
     right: -100%;
