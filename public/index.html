@@ -17,14 +17,21 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="hamburgers.css" />
     <script src="script.js" defer></script>
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="/"><img src="img/nick-logo.png" alt="My logo" /></a>
-            <ul>
+            <a href="/"><img id="logo" src="img/nick-logo.png" alt="My logo" /></a>
+
+            <button id="hamburger" class="hamburger hamburger--squeeze" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+            <ul id="menu" class="is-hidden">
                 <li><a href="#about">About me</a></li>
                 <li><a href="#work">My work</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -32,9 +39,10 @@
             </ul>
         </nav>
         <section id="promo">
-            <h1>Web developer</h1>
-            <h1>Designer</h1>
-
+            <div id="heading-block">
+                <h1>Web developer</h1>
+                <h1>Designer</h1>
+            </div>
             <img class="arrow-down" src="img/controls/arrow-down.png" alt="" />
         </section>
     </header>

@@ -1,4 +1,4 @@
-:root{
+:root {
     --accent-color: #556586;
     --secondary-color: #FFF;
 }
@@ -16,14 +16,113 @@ body {
 
 nav ul {
     display: inline-block;
+    margin: 0 15px;
 }
 
-nav ul li{
+nav ul li {
     display: inline-block;
+    position: relative;
+    top: 10%;
+    list-style: none;
+    margin: 5px 5px;
 }
 
-nav ul li{
-    list-style: none;
+#logo {
+    width: 170px;
+}
+
+#menu {
+    font-size: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    width: 50%;
+    top: 0;
+    right: -5%;
+    transition: right 0.5s;
+    background-color: var(--accent-color);
+    opacity: 0.9;
+    padding: 2%;
+    align-items: center;
+}
+
+#menu li a {
+    color: var(--secondary-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 30px 0;
+}
+
+@media (min-width:750px) {
+    #hamburger {
+        display: none;
+    }
+
+    #menu {
+        flex-direction: row;
+        position: absolute;
+        top: 10px;
+        width: auto;
+        right: 10% !important;
+        background: none;
+        align-items: baseline;
+        padding-top: 0;
+        opacity: 1;
+    }
+
+    #menu li a {
+        color: var(--accent-color);
+    }
+
+    nav ul li {
+        display: inline-block;
+        top: 0;
+        margin: 0 5px;
+    }
+
+    h1 {
+        font-size: 5rem;
+    }
+}
+
+#promo {
+    position: relative;
+    padding: 0;
+}
+
+#promo .arrow-down{
+    width: 40px;
+    margin: 0 auto;
+    display: block;
+}
+
+#hamburger {
+    position: absolute;
+    right: 7%;
+    top: -4px;
+    z-index: 1;
+    opacity: 0.9 !important;
+}
+
+#hamburger.hamburger.is-active {
+    position: fixed;
+    top: -4px;
+}
+
+.hamburger-inner,
+.hamburger-inner::after,
+.hamburger-inner::before {
+    background-color: var(--accent-color);
+    height: 2.5px !important;
+}
+
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    background-color: var(--secondary-color);
 }
 
 a {
@@ -36,7 +135,12 @@ a:hover {
     transition: opacity 0.2s;
 }
 
-header, section{
+#heading-block {
+    margin: 15% 0;
+}
+
+header,
+section {
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
@@ -61,7 +165,7 @@ header {
     background: url("img/backgrounds/skills-back.webp");
 }
 
-#skill-logos img{
+#skill-logos img {
     width: 50px;
     margin: 0 5px;
 }
@@ -77,4 +181,8 @@ header {
 
 section h2 {
     margin-top: 0;
+}
+
+#menu.is-hidden {
+    right: -100%;
 }
