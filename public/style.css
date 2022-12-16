@@ -25,6 +25,7 @@ nav ul li {
     top: 10%;
     list-style: none;
     margin: 5px 5px;
+    transform: scale(1, 1.2);
 }
 
 #logo {
@@ -45,6 +46,9 @@ nav ul li {
     opacity: 0.9;
     padding: 2%;
     align-items: center;
+    z-index: 1;
+    padding: 0;
+    margin-right: 0;
 }
 
 #menu li a {
@@ -52,19 +56,42 @@ nav ul li {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin: 30px 0;
+    transform: scale(1, 1.2);
 }
 
-@media (min-width:750px) {
+#promo {
+    position: relative;
+    padding: 0;
+}
+
+#promo .arrow-down{
+    width: 40px;
+    display: none;
+    position: fixed;
+    left: 49%;
+    bottom: 5%;
+
+    animation: 1.5s ease-in-out 0.1s down-up;
+    animation-iteration-count: infinite;
+
+}
+
+@media (min-width:990px) {
+    #logo {
+        width: 250px;
+    }
+
     #hamburger {
         display: none;
     }
 
     #menu {
+        font-size: 2.3rem;
         flex-direction: row;
         position: absolute;
-        top: 10px;
+        top: 17px;
         width: auto;
         right: 10% !important;
         background: none;
@@ -80,36 +107,38 @@ h1 {
     nav ul li {
         display: inline-block;
         top: 0;
-        margin: 0 5px;
+        margin: 0 15px;
     }
 
     h1 {
         font-size: 5rem;
+        margin: 40px 0;
+    }
+
+    #promo .arrow-down{
+        display: block;
     }
 }
 
-#promo {
-    position: relative;
-    padding: 0;
-}
-
-#promo .arrow-down{
-    width: 40px;
-    margin: 0 auto;
-    display: block;
+@media (min-width:1440px) {
+    nav ul li {
+        display: inline-block;
+        top: 0;
+        margin: 0 30px;
+    }
 }
 
 #hamburger {
     position: absolute;
     right: 7%;
-    top: -4px;
-    z-index: 1;
+    top: 5px;
+    z-index: 2;
     opacity: 0.9 !important;
 }
 
 #hamburger.hamburger.is-active {
     position: fixed;
-    top: -4px;
+    top: 5px;
 }
 
 .hamburger-inner,
@@ -136,7 +165,7 @@ a:hover {
 }
 
 #heading-block {
-    margin: 15% 0;
+    margin: 15% 0 25% 0;
 }
 
 header,
@@ -150,6 +179,7 @@ section {
 
 header {
     background: url("img/backgrounds/main.webp");
+    padding: 18px 10%;
 }
 
 #about {
@@ -185,4 +215,22 @@ section h2 {
 
 #menu.is-hidden {
     right: -100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+@keyframes down-up {
+    0% {
+        transform: translate(0,0);
+        opacity: 0.01;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0,20px);
+        opacity: 0.3;
+    }
 }
