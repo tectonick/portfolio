@@ -191,8 +191,17 @@ header {
 }
 
 #work {
-    background: url("img/works/belsco.webp");
+    background-image: url("img/works/belsco.webp");
+    transition: background-image 0.2s ease-in-out;
     color: var(--secondary-color);
+    position: relative;
+    height: 70vh;
+}
+
+#work a {
+    color: var(--secondary-color);
+    display: block;
+    margin: 30px 0 60px 0;
 }
 
 #skills {
@@ -244,10 +253,70 @@ header {
     position: relative;
 }
 
+
+.arrow-side {
+    width: 20px;
+    transition: opacity 0.2s;
+    cursor: pointer;
+}
+
+.arrow-side:hover {
+    opacity: 0.7;
+}
+
+.arrow-side-right {
+    float: right;
+}
+
+.slider-controls {
+    display: block;
+    position: absolute;
+    top: 45%;
+    left: 2%;
+    width: 96%;
+}
+
+.work {
+    padding: 10vw 0 0 0;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.work p, .work a {
+    font-size: 1.2rem;
+}
+
+.work h3 {
+    font-size: 1.7rem;
+}
+
+.work.selected {
+    display: block;
+}
+
+.work.visible {
+    opacity: 1;
+}
+
+.work .work-background {
+    display: none;
+}
+
 @media (min-width:600px) {
     #skill-logos {
         display: block;
     }
+    .work {
+        padding: 120px 0 0 0;
+    }
+    .work p, .work a{
+        font-size: 1.5rem;
+    }
+    .work h3 {
+        font-size: 2rem;
+    }
+    
 }
 
 #contacts {
@@ -301,3 +370,9 @@ section li {
         opacity: 0.3;
     }
 }
+
+
+.rotate180 {
+    transform: rotate(180deg);
+}
+
