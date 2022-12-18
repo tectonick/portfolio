@@ -1,12 +1,20 @@
-let hamburger = document.getElementById("hamburger");
-let menu = document.getElementById("menu");
-let arrowDown = document.querySelector("#promo .arrow-down");
-let workContainer = document.getElementById("work");
-let workLeftControl = workContainer.querySelector(".slider-controls .arrow-side-left");
-let workRightControl = workContainer.querySelector(".slider-controls .arrow-side-right");
-let works = workContainer.querySelectorAll(".work");
+// Elements
+const hamburger = document.getElementById("hamburger");
+const menu = document.getElementById("menu");
+const arrowDown = document.querySelector("#promo .arrow-down");
+const workContainer = document.getElementById("work");
+const workLeftControl = workContainer.querySelector(".slider-controls .arrow-side-left");
+const workRightControl = workContainer.querySelector(".slider-controls .arrow-side-right");
+const works = workContainer.querySelectorAll(".work");
+const backToTopButton = document.querySelector(".back-to-top");
+
+// Settings
+const showScrollUpOnPx = 200;
+
+// State
 let currentWorkNumber = 0;
 
+// Menu
 hamburger.addEventListener("click",()=>{
     toggleMenu();
 })
@@ -20,17 +28,7 @@ menu.querySelectorAll("li a").forEach((link)=>{
     link.addEventListener("click", ()=>toggleMenu())
 })
 
-window.addEventListener("scroll", event => {
-    console.log(this.scrollY);
-    if (this.scrollY > 50){
-        arrowDown.classList.add("hidden")
-    }
-    else {
-        arrowDown.classList.remove("hidden");
-    }
-});
-
-
+// Slider
 workRightControl.addEventListener("click", ()=>{
     changeSlides((currentWorkNumber + 1) % works.length);
 })
@@ -46,3 +44,30 @@ function changeSlides(next){
     currentWorkNumber = next;
     setTimeout(() => works[currentWorkNumber].classList.add("visible"), 100);
 }
+
+//Scroll
+window.addEventListener("scroll", () => {
+    if (this.scrollY > 50){
+        arrowDown.classList.add("hidden")
+    }
+    else {
+        arrowDown.classList.remove("hidden");
+    }
+});
+
+const scrollContainer = () => {
+  return document.documentElement || document.body;
+};
+
+const goToTop = () => {
+    document.body.scrollIntoView();
+  };
+
+document.addEventListener("scroll", () => {
+  if (scrollContainer().scrollTop > showScrollUpOnPx)
+    backToTopButton.classList.remove("hidden");
+  else
+    backToTopButton.classList.add("hidden");
+});
+
+backToTopButton.addEventListener("click", goToTop);
