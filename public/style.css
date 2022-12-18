@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Tw Cen MT Condensed', Verdana, sans-serif;
+    font-family: 'Britannic Light', Verdana, sans-serif;
     color: var(--accent-color);
     margin: 0;
 }
@@ -24,17 +24,21 @@ section {
 /* Text */
 
 @font-face {
-    font-family: "Tw Cen MT Condensed";
-    src: url(fonts/TwCenMTCondensed.ttf);
+    font-family: "Britannic Light";
+    src: url(fonts/Britannic\ T\ Ligh.ttf);
 }
 
-h1,
+h1 {
+    font-family: 'Britannic';
+    transform: scale(0.9, 1.1) translateX(-5.6%);
+}
+
 h2,
 h3,
 p,
 a,
 li {
-    transform: scale(1, 1.2);
+    font-weight:900;
 }
 
 h1 {
@@ -292,7 +296,7 @@ header {
 #work a {
     color: var(--secondary-color);
     display: block;
-    margin: 30px 0 60px 0;
+    margin: 30px 0 30px 0;
 }
 
 .arrow-side {
@@ -318,7 +322,7 @@ header {
 }
 
 .work {
-    padding: 10vw 0 0 0;
+    padding: 12vw 0 0 0;
     display: none;
     opacity: 0;
     transition: opacity 0.3s;
@@ -436,9 +440,59 @@ header {
 
 /* Responsive */
 
+@media (min-width:600px) {
+    h2 {
+        font-size: 3rem;
+    }
+
+    #skills h3 {
+        font-size: 1.8rem;
+    }
+
+    p,
+    a,
+    section li {
+        font-size: 1.5rem;
+    }
+
+    .work {
+        padding: 90px 0 0 0;
+    }
+
+    .work p,
+    .work a {
+        font-size: 1.5rem;
+    }
+
+    .work h3 {
+        font-size: 2rem;
+    }
+
+    #contacts a,
+    #contacts p {
+        font-size: 2rem;
+    }
+
+    #contacts a.shift-right {
+        padding-left: 83px;
+    }
+}
+
+@media (min-width:900px) {
+    #contacts-links .right-block {
+        position: absolute;
+        top: 0;
+        right: 30%;
+    }
+}
+
 @media (min-width:990px) {
     #logo {
         width: 250px;
+    }
+
+    #skill-logos {
+        display: block;
     }
 
     #hamburger {
@@ -484,55 +538,9 @@ header {
         top: 0;
         margin: 0 30px;
     }
-}
-
-@media (min-width:900px) {
-    #contacts-links .right-block {
-        position: absolute;
-        top: 0;
-        right: 30%;
-    }
-}
-
-@media (min-width:600px) {
-    h2 {
-        font-size: 3rem;
-    }
-
-    #skills h3 {
-        font-size: 1.8rem;
-    }
-
-    p,
-    a,
-    section li {
-        font-size: 1.5rem;
-    }
-
-    #skill-logos {
-        display: block;
-    }
 
     .work {
-        padding: 120px 0 0 0;
-    }
-
-    .work p,
-    .work a {
-        font-size: 1.5rem;
-    }
-
-    .work h3 {
-        font-size: 2rem;
-    }
-
-    #contacts a,
-    #contacts p {
-        font-size: 2rem;
-    }
-
-    #contacts a.shift-right {
-        padding-left: 83px;
+        padding: 130px 0 0 0;
     }
 }
 
