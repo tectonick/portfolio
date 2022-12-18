@@ -56,7 +56,12 @@ nav ul li {
 }
 
 
-h1, h2, h3, p, li, a {
+h1,
+h2,
+h3,
+p,
+li,
+a {
     transform: scale(1, 1.2);
 }
 
@@ -70,7 +75,7 @@ h1 {
     padding: 0;
 }
 
-#promo .arrow-down{
+#promo .arrow-down {
     width: 40px;
     display: none;
     position: fixed;
@@ -119,7 +124,7 @@ h1 {
         margin: 40px 0;
     }
 
-    #promo .arrow-down{
+    #promo .arrow-down {
         display: block;
     }
 }
@@ -221,13 +226,14 @@ header {
     right: 10%;
 }
 
-#contacts a, #contacts p {
+#contacts a,
+#contacts p {
     display: block;
     margin-bottom: 30px;
     font-size: 2rem;
 }
 
-#contacts a.shift-right{
+#contacts a.shift-right {
     padding-left: 83px;
 }
 
@@ -283,7 +289,8 @@ header {
     transition: opacity 0.3s;
 }
 
-.work p, .work a {
+.work p,
+.work a {
     font-size: 1.2rem;
 }
 
@@ -307,16 +314,20 @@ header {
     #skill-logos {
         display: block;
     }
+
     .work {
         padding: 120px 0 0 0;
     }
-    .work p, .work a{
+
+    .work p,
+    .work a {
         font-size: 1.5rem;
     }
+
     .work h3 {
         font-size: 2rem;
     }
-    
+
 }
 
 #contacts {
@@ -359,20 +370,20 @@ section li {
 
 @keyframes down-up {
     0% {
-        transform: translate(0,0);
+        transform: translate(0, 0);
         opacity: 0.01;
     }
+
     20% {
         opacity: 1;
     }
+
     100% {
-        transform: translate(0,20px);
+        transform: translate(0, 20px);
         opacity: 0.3;
     }
 }
 
-
 .rotate180 {
     transform: rotate(180deg);
 }
-
