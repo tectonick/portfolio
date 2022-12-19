@@ -55,7 +55,7 @@ window.addEventListener("scroll", () => {
     }
 });
 
-const scrollContainer = () => {
+const GetScrollContainer = () => {
   return document.documentElement || document.body;
 };
 
@@ -64,10 +64,25 @@ const goToTop = () => {
   };
 
 document.addEventListener("scroll", () => {
-  if (scrollContainer().scrollTop > showScrollUpOnPx)
+  let scrollContainer = GetScrollContainer();
+  let scrollBottom = scrollContainer.scrollTop + scrollContainer.clientHeight;
+  let workContainerEnd = workContainer.offsetTop + workContainer.offsetHeight;
+  const aspectRation = 1920 / 1080;
+  const shiftStrength = 9;
+
+  if (scrollBottom > workContainer.offsetTop && scrollContainer.scrollTop < workContainerEnd) {
+    let workScrollPercent = (scrollBottom - workContainer.offsetTop) / scrollContainer.clientHeight;
+    let realAspectRation = workContainer.offsetWidth / workContainer.offsetHeight;
+    let workScrollMax = realAspectRation > aspectRation ? (realAspectRation - aspectRation) * shiftStrength : 0;
+    
+    workContainer.style.backgroundPositionY = `-${workScrollPercent * workScrollMax}vw`;
+  }
+
+  if (scrollContainer.scrollTop > showScrollUpOnPx)
     backToTopButton.classList.remove("hidden");
-  else
-    backToTopButton.classList.add("hidden");
+  else backToTopButton.classList.add("hidden");
 });
 
 backToTopButton.addEventListener("click", goToTop);
+
+
