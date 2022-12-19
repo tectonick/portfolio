@@ -372,6 +372,7 @@ header {
 
 #contacts {
     background: url("img/backgrounds/contacts-back.webp");
+    position: relative;
 }
 
 #contacts a,
@@ -398,6 +399,25 @@ header {
 
 #contacts-links {
     position: relative;
+}
+
+#contacts .qr {
+    display: none;
+    width: 350px;
+}
+
+#download-cv {
+    position: absolute;
+    top: -10px;
+    right: 6%;
+    padding: 5px;
+    display: inline-block;
+    border: solid 3px var(--accent-color);
+    width: fit-content;
+}
+
+#download-cv:hover {
+    opacity: 0.7;
 }
 
 /* Scroll */
@@ -476,13 +496,15 @@ header {
     #contacts a.shift-right {
         padding-left: 83px;
     }
-}
 
-@media (min-width:900px) {
-    #contacts-links .right-block {
-        position: absolute;
-        top: 0;
-        right: 30%;
+    #contacts .qr {
+        display: block;
+    }
+
+    #download-cv {
+        top: -15px;
+        right: 10%;
+        padding: 10px;
     }
 }
 
@@ -537,6 +559,12 @@ header {
         display: inline-block;
         top: 0;
         margin: 0 30px;
+    }
+
+    #contacts-links .right-block {
+        position: absolute;
+        top: -13%;
+        right: 30%;
     }
 
     .work {
