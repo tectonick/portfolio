@@ -3,17 +3,21 @@
 :root {
     --accent-color: #556586;
     --secondary-color: #FFF;
+    --main-shadow: 0px 1px 10px #c1c1c1, 0px -1px 10px #c1c1c1;
+    --strong-shadow: 0px 3px 10px #9a9a9a, 0px -3px 10px #9a9a9a;
     scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Britannic Light', Verdana, sans-serif;
     color: var(--accent-color);
+    background-color: aliceblue;
     margin: 0;
 }
 
 header,
 section {
+    position: relative;
     background-size: cover !important;
     background-position-x: center !important;
     background-position-y: center;
@@ -237,8 +241,31 @@ nav ul li {
 /* Promo */
 
 header {
-    background: url("img/backgrounds/main.webp");
+    background-blend-mode: overlay;
     padding: 18px 10%;
+    box-shadow: var( --main-shadow);
+    z-index: 5;
+    animation: background-show 0.8s 1s both linear, opacity-show 1.5s both;
+}
+
+@keyframes background-show {
+    0%{
+        background: url("img/backgrounds/main.webp") aliceblue;
+    }
+
+    100%{
+        background: url("img/backgrounds/main.webp");
+    }
+}
+
+@keyframes opacity-show {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
 }
 
 #promo {
@@ -281,6 +308,8 @@ header {
 
 #about {
     background: url("img/backgrounds/about-back.webp");
+    z-index: 4;
+    animation: opacity-show 2s both;
 }
 
 /* Works */
@@ -294,6 +323,8 @@ header {
     height: 72vh;
     display: flex;
     flex-direction: column;
+    z-index: 5;
+    box-shadow: var( --strong-shadow);
 }
 
 #work a {
@@ -364,6 +395,9 @@ header {
 #skills {
     background: url("img/backgrounds/skills-back.webp");
     position: relative;
+    z-index: 4;
+    box-shadow: var( --main-shadow);
+
 }
 
 #skill-logos img {
@@ -383,6 +417,8 @@ header {
 #contacts {
     background: url("img/backgrounds/contacts-back.webp");
     position: relative;
+    z-index: 5;
+    box-shadow: var( --main-shadow);
 }
 
 #contacts a,
