@@ -7,6 +7,8 @@ const workLeftControl = workContainer.querySelector(".slider-controls .arrow-sid
 const workRightControl = workContainer.querySelector(".slider-controls .arrow-side-right");
 const works = workContainer.querySelectorAll(".work");
 const backToTopButton = document.querySelector(".back-to-top");
+const contactsContainer = document.getElementById("contacts");
+const headerContainer = document.getElementsByTagName("header")[0];
 
 // Settings
 const showScrollUpOnPx = 200;
@@ -63,25 +65,32 @@ const goToTop = () => {
     document.body.scrollIntoView();
   };
 
-document.addEventListener("scroll", () => {
-  let scrollContainer = GetScrollContainer();
-  let scrollBottom = scrollContainer.scrollTop + scrollContainer.clientHeight;
-  let workContainerEnd = workContainer.offsetTop + workContainer.offsetHeight;
-  const aspectRation = 1920 / 1080;
-  const shiftStrength = 9;
+document.addEventListener("DOMContentLoaded", getParallaxEffect(headerContainer, 1920 / 1100, 15));
+document.addEventListener("scroll", getParallaxEffect(headerContainer, 1920 / 1100, 15));
+document.addEventListener("scroll", getParallaxEffect(workContainer, 1920 / 1080, 9));
+document.addEventListener("scroll", getParallaxEffect(contactsContainer, 1920 / 1440, 9));
 
-  if (scrollBottom > workContainer.offsetTop && scrollContainer.scrollTop < workContainerEnd) {
-    let workScrollPercent = (scrollBottom - workContainer.offsetTop) / scrollContainer.clientHeight;
-    let realAspectRation = workContainer.offsetWidth / workContainer.offsetHeight;
-    let workScrollMax = realAspectRation > aspectRation ? (realAspectRation - aspectRation) * shiftStrength : 0;
-    
-    workContainer.style.backgroundPositionY = `-${workScrollPercent * workScrollMax}vw`;
+
+function getParallaxEffect(parallaxContainer, aspectRation, shiftStrength){
+  return () => {  
+    let scrollContainer = GetScrollContainer();
+    let scrollBottom = scrollContainer.scrollTop + scrollContainer.clientHeight;
+    let workContainerEnd = parallaxContainer.offsetTop + parallaxContainer.offsetHeight;
+
+    if (scrollBottom > parallaxContainer.offsetTop && scrollContainer.scrollTop < workContainerEnd) {
+
+      let workScrollPercent = (scrollBottom - parallaxContainer.offsetTop) / scrollContainer.clientHeight;
+      let realAspectRation = parallaxContainer.offsetWidth / parallaxContainer.offsetHeight;
+      let workScrollMax = realAspectRation > aspectRation ? (realAspectRation - aspectRation) * shiftStrength : 0;
+      
+      parallaxContainer.style.setProperty("background-position-y",`-${workScrollPercent * workScrollMax}vw`, "important" ) ;
+    }
+  
+    if (scrollContainer.scrollTop > showScrollUpOnPx)
+      backToTopButton.classList.remove("hidden");
+    else backToTopButton.classList.add("hidden");
   }
-
-  if (scrollContainer.scrollTop > showScrollUpOnPx)
-    backToTopButton.classList.remove("hidden");
-  else backToTopButton.classList.add("hidden");
-});
+}
 
 backToTopButton.addEventListener("click", goToTop);
 
