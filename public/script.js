@@ -106,3 +106,20 @@ let observableElements = document.querySelectorAll(".observable");
 for (const element of observableElements) {
   intersectionObserver.observe(element);  
 }
+
+let chooseList = document.getElementById("choose-list");
+let skillLogos = document.getElementById("skill-logos");
+
+chooseList.addEventListener("mouseover", e => {
+  let logosAlts = e.target.dataset.choose.split(" ");
+  for (const logoAlt of logosAlts) {
+    skillLogos.querySelector(`[alt=${logoAlt}]`).classList.add("choosen");
+  }
+})
+
+chooseList.addEventListener("mouseout", e => {
+  let logosAlts = e.target.dataset.choose.split(" ");
+  for (const logoAlt of logosAlts) {
+    skillLogos.querySelector(`[alt=${logoAlt}]`).classList.remove("choosen");
+  }
+})

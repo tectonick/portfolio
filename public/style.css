@@ -73,7 +73,6 @@ a {
 
 a:hover, a:focus {
     opacity: 0.6;
-    filter: brightness(130%);
     transition: opacity 0.2s;
 }
 
@@ -403,7 +402,12 @@ header {
 
 #skill-logos img {
     width: 50px;
-    margin: 0 5px;
+    margin: 0 8px;
+    transition: transform 0.3s;;
+}
+
+#skill-logos img:hover, #skill-logos img.choosen {
+    transform: scale(125%);
 }
 
 #skill-logos {
@@ -411,6 +415,20 @@ header {
     position: absolute;
     top: 15px;
     right: 10%;
+}
+
+#skills li{
+    width: fit-content;
+    margin-bottom: 1rem;
+}
+
+#choose-list{
+    width: fit-content;
+}
+
+#choose-list li:hover{
+    opacity: 0.6;
+    transition: opacity 0.3s;
 }
 
 /* Contacts */
