@@ -94,4 +94,15 @@ function getParallaxEffect(parallaxContainer, aspectRation, shiftStrength){
 
 backToTopButton.addEventListener("click", goToTop);
 
+let intersectionObserver = new IntersectionObserver((entries)=>{
+  for (const entry of entries) {
+    if (entry.isIntersecting){
+      entry.target.classList.add("visible");
+    }
+  }
+})
 
+let observableElements = document.querySelectorAll(".observable");
+for (const element of observableElements) {
+  intersectionObserver.observe(element);  
+}

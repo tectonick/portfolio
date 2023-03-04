@@ -71,8 +71,9 @@ a {
     color: var(--accent-color);
 }
 
-a:hover {
+a:hover, a:focus {
     opacity: 0.6;
+    filter: brightness(130%);
     transition: opacity 0.2s;
 }
 
@@ -645,4 +646,15 @@ header {
 
 .hidden {
     display: none !important;
+}
+
+.observable {
+    opacity: 0;
+    transform: translateY(-20%);
+    transition: opacity 1.5s, transform 1.5s;
+}
+
+.observable.visible {
+    opacity: 1;
+    transform: none;
 }
