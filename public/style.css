@@ -574,10 +574,6 @@ header {
         width: 250px;
     }
 
-    #skill-logos {
-        display: block;
-    }
-
     #hamburger {
         display: none;
     }
@@ -621,6 +617,12 @@ header {
 
     .work h3 {
         font-size: 2rem;
+    }
+}
+
+@media (min-width:1200px) {
+    #skill-logos {
+        display: block;
     }
 }
 
